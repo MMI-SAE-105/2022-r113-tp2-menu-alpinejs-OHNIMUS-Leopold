@@ -1,3 +1,4 @@
 - nom : OHNIMUS
 - prénom : Léopold
 - URL publique du site : https://gilded-creponne-9ceb36.netlify.app/
+- URL (nom de domaine personalisé) : https://testnetlify.leopold-ohnimus.fr
