@@ -12,7 +12,7 @@
     <!-- https://emmet.io/ -->
     <!-- header>h1{Test de menu} -->
     <header>
-      <a href="../en/index.html">Switch to english</a>
+      <a href="../en/index.html" onclick="document.cookie = 'nf_lang=fr; path=/'">Switch to english</a>
       <button aria-controls="mainNav" @click="menuIsOpen = ! menuIsOpen" class="header__menuBtn">Menu</button>
       <h1>Test de menu</h1>
       <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.1200ms class="menu">
