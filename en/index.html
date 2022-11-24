@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{menuIsOpen: false}" :class="{noscroll:menuIsOpen,}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <script defer src="https://unpkg.com/alpinejs"></script>
+    <link rel="stylesheet" href="./src/css/styles.css">
+  </head>
+  <body>
+    <!-- https://emmet.io/ -->
+    <!-- header>h1{Test de menu} -->
+    <header>
+      <button aria-controls="mainNav" @click="menuIsOpen = ! menuIsOpen" class="header__menuBtn">Menu</button>
+      <h1>Menu test</h1>
+      <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.1200ms class="menu">
+        <ul>
+          <li><a href="#">item 1</a></li>
+          <li><a href="#">item 2</a></li>
+          <li><a href="#">item 3</a></li>
+        </ul>
+      </nav>
+      <div>
+        <dl x-data="{dt1: false}">
+          <dt class="desc" @click="dt1 = ! dt1" aria-controls="description1">Lorem.</dt>
+          <dd id="description1" x-show="dt1">Lorem ipsum dolor sit amet.</dd>
+        </dl>
+        <dl x-data="{dt2: false}">
+          <dt class="desc" @click="dt2 = ! dt2" aria-controls="description2">Hic?</dt>
+          <dd id="description2" x-show="dt2">Aut accusantium eum error amet.</dd>
+        </dl>
+        <dl x-data="{dt3: false}">
+          <dt class="desc" @click="dt3 = ! dt3" aria-controls="description3">Beatae.</dt>
+          <dd id="description3" x-show="dt3">Quasi facere voluptas praesentium laborum.</dd>
+        </dl>
+      </div>
+    </header>
+    <!-- h2>lorem2^p>lorem -->
+    <h2>Lorem, ipsum.</h2>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat
+      mollitia adipisci alias error laboriosam numquam incidunt magni eum eos
+      nemo aliquid pariatur quam voluptates animi laudantium, aperiam
+      consectetur nobis enim.
+    </p>
+    <div>
+      <nav>
+        <h4>Animals list</h4>
+        <ul>
+          <li>
+            <a href="./fr/cats/index.html">Cat list</a>
+            <ul>
+              <li><a href="/fr/cats/chat1.html">Cat 1</a></li>
+              <li><a href="/fr/cats/chat2.html">Cat 2</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="./fr/dogs/index.html">Dog list</a>
+            <ul>
+              <li><a href="/fr/dogs/chien1.html">Dog 1</a></li>
+              <li><a href="/fr/dogs/chien2.html">Dog 2</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>
+
+<style>
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    display: grid;
+    place-content: center;
+  }
+
+  .header__menuBtn {
+    position: relative;
+    z-index: 10;
+  }
+
+  .noscroll,
+  .noscroll body {
+  overflow: hidden;
+  }
+
+  .desc {
+    color: red;
+  }
+</style>
