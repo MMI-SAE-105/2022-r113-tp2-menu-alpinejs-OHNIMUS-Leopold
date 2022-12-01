@@ -8,6 +8,11 @@
     <link rel="alternate" hreflang="en" href="../en/index.html" />
     <script defer src="https://unpkg.com/alpinejs"></script>
     <link rel="stylesheet" href="./src/css/styles.css">
+    <!-- à placer à la fin de head -->
+    <link href="https://unpkg.com/cloudinary-video-player@1.9.4/dist/cld-video-player.min.css" 
+    rel="stylesheet">
+    <script src="https://unpkg.com/cloudinary-video-player@1.9.4/dist/cld-video-player.min.js" 
+    type="text/javascript"></script>
   </head>
   <body>
     <!-- https://emmet.io/ -->
@@ -73,6 +78,18 @@
       <video controls src="https://medias.leopold-ohnimus.fr/egoist_olivia_hye.mp4"></video>
     </section>
 
+    <section>
+      <h1>Vidéo depuis cloudinary</h1>
+      <!-- à placer dans votre HTML -->
+      <video
+      width=400
+      height=200
+      id="example-player"
+      controls
+      muted
+      class="cld-video-player cld-video-player-skin-dark">
+      </video>
+    </section>
   </body>
 </html>
 
@@ -102,3 +119,11 @@
     color: red;
   }
 </style>
+
+<!-- à placer (eg.) à la fin de body -->
+<script>
+  var cld = cloudinary.videoPlayer('example-player', { 
+      cloud_name: 'dj0axytwn', //remplacer par votre id cloudinary 
+      sourceTypes: ['hls','dash','webm/vp9','mp4/h265','mp4']});
+  cld.source('samples/cld-sample-video'); //à remplacer après avoir uploader une vidéo
+</script>
